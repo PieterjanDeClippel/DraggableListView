@@ -319,35 +319,39 @@ namespace App3
 				dectector.OnTouchEvent (e);
 				switch (e.Action) {
 				case MotionEventActions.Down:
-					mDownX = (int)e.GetX ();
-					mDownY = (int)e.GetY ();
-					mActivePointerId = e.GetPointerId (0);
+						Console.WriteLine("down");
+					//mDownX = (int)e.GetX ();
+					//mDownY = (int)e.GetY ();
+					//mActivePointerId = e.GetPointerId (0);
 					break;
 				case MotionEventActions.Move:
-					if (mActivePointerId == INVALID_POINTER_ID)
+						Console.WriteLine("move");
+						//if (mActivePointerId == INVALID_POINTER_ID)
+						//	break;
+
+						//int pointerIndex = e.FindPointerIndex (mActivePointerId);
+						//mLastEventY = (int)e.GetY (pointerIndex);
+						//int deltaY = mLastEventY - mDownY;
+
+
+						//if (mCellIsMobile) { // Responsible for moving the bitmap drawable to the touch location
+						//	Enabled = false;
+
+						//	mHoverCellCurrentBounds.OffsetTo (mHoverCellOriginalBounds.Left,
+						//		mHoverCellOriginalBounds.Top + deltaY + mTotalOffset);
+						//	mHoverCell.SetBounds (mHoverCellCurrentBounds.Left, mHoverCellCurrentBounds.Top, mHoverCellCurrentBounds.Right, mHoverCellCurrentBounds.Bottom);
+						//	Invalidate ();
+						//	HandleCellSwitch ();
+						//} 
 						break;
-
-					int pointerIndex = e.FindPointerIndex (mActivePointerId);
-					mLastEventY = (int)e.GetY (pointerIndex);
-					int deltaY = mLastEventY - mDownY;
-
-
-					if (mCellIsMobile) { // Responsible for moving the bitmap drawable to the touch location
-						Enabled = false;
-
-						mHoverCellCurrentBounds.OffsetTo (mHoverCellOriginalBounds.Left,
-							mHoverCellOriginalBounds.Top + deltaY + mTotalOffset);
-						mHoverCell.SetBounds (mHoverCellCurrentBounds.Left, mHoverCellCurrentBounds.Top, mHoverCellCurrentBounds.Right, mHoverCellCurrentBounds.Bottom);
-						Invalidate ();
-						HandleCellSwitch ();
-					} 
-					break;
 				case MotionEventActions.Up:
-					TouchEventsEnded ();
-					break;
+						Console.WriteLine("up");
+						//TouchEventsEnded ();
+						break;
 				case MotionEventActions.Cancel:
-					TouchEventsCancelled ();
-					break;
+						Console.WriteLine("cancel");
+						//TouchEventsCancelled ();
+						break;
 				default:
 					break;
 				}
